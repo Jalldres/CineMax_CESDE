@@ -1,0 +1,91 @@
+/* Configuración General y Tipografía */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #1A1A1A; /* Gris Oscuro Principal */
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* Colores de Acento y Temática */
+.text-danger { color: #B80F0F !important; } /* Rojo Intenso */
+.text-warning { color: #FFD700 !important; } /* Amarillo Suave / Dorado */
+.bg-black { background-color: #000000 !important; }
+.border-danger { border-color: #B80F0F !important; }
+
+/* Estilos de Contenedor con Flexbox */
+main.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Efectos de Interactividad (Pseudoclases) */
+.hover-effect:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(184, 15, 15, 0.5);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.hover-zoom:hover {
+    transform: translateY(-3px);
+    background-color: #d61212 !important;
+    box-shadow: 0 5px 15px rgba(184, 15, 15, 0.4);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.nav-link.text-warning {
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Personalización de Inputs */
+.focus-danger:focus {
+    background-color: #111 !important;
+    color: white !important;
+    border-color: #B80F0F !important;
+    box-shadow: 0 0 8px rgba(184, 15, 15, 0.5);
+}
+
+/* Diseño de la Tabla */
+.table-hover tbody tr:hover {
+    background-color: rgba(184, 15, 15, 0.1) !important;
+    color: #FFD700 !important;
+    transition: background 0.2s;
+}
+
+/* Media Query para Dispositivos Móviles */
+@media (max-width: 768px) {
+    /* Deshabilitar o cambiar comportamiento de flexbox en móvil */
+    main.container {
+        display: block; /* Cambia de flex a bloque para flujo vertical natural */
+        padding: 15px !important;
+    }
+
+    .row {
+        flex-direction: column; /* Asegura que las filas de Bootstrap se apilen verticalmente */
+    }
+
+    h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .display-6 {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Estilos adicionales para simular la "Pantalla de Cine" */
+section#cartelera::before {
+    content: "";
+    display: block;
+    height: 10px;
+    background: linear-gradient(to right, transparent, #B80F0F, transparent);
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
